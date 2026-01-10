@@ -2,15 +2,21 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+#Processors
 from processors.text_processor import extract_text
 from processors.pdf_processor import extract_pdf_text
 from processors.docx_processor import extract_docx_text
 from processors.image_processor import extract_image_text
- 
+
+#Refiner
+from refiner.extractor import refine_text_to_prompt
+
+
+# Processor TESTING
 # #TEXT TESTING
-# if __name__ == "__main__":
-#     text = extract_text("data/samples/text_samples.txt")
-#     print("TEXT EXTRACTED:", text)
+if __name__ == "__main__":
+    text = extract_text("data/samples/text_samples.txt")
+    print("TEXT EXTRACTED:", text)
 
 # #PDF TESTING
 # print("\n--- PDF TESTING ---")
@@ -25,8 +31,16 @@ from processors.image_processor import extract_image_text
 
 
 #image TESTING
-if __name__ == "__main__":
-    print("\n--- IMAGE TESTING ---")
-    image_text = extract_image_text("data/samples/sample.png")
-    print("IMAGE TEXT EXTRACTED:", image_text)
+# if __name__ == "__main__":
+#     print("\n--- IMAGE TESTING ---")
+#     image_text = extract_image_text("data/samples/sample.png")
+#     print("IMAGE TEXT EXTRACTED:", image_text)
     
+    
+#Refiner TESTING
+print("\n" + "="*50)
+print("REFINING TEXT TO STRUCTURED PROMPT:")
+print("="*50)
+
+refined = refine_text_to_prompt(text)  # Use text from text_processor
+print(refined.model_dump_json(indent=2))
