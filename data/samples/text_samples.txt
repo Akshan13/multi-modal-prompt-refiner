@@ -1,0 +1,1 @@
+Design a wooden chair app. Must support 100kg. Use oak wood. Budget constraint $200.
