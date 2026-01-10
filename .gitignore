@@ -1,0 +1,27 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenvs
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data/models
+data/outputs/
+*.pkl
+*.h5
+easyocr/model/  # OCR models
+
+# Logs/secrets
+*.log
+.env
