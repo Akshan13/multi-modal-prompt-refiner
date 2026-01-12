@@ -34,7 +34,7 @@ def refine_multimodal(
     
     # Extract from all provided sources
     if text_path and os.path.exists(text_path):
-        print(f"📝 Extracting from text: {text_path}")
+        print(f"Extracting from text: {text_path}")
         text_content = extract_text(text_path)
         print(f"   Length: {len(text_content)} chars")
         if text_content and not text_content.startswith("Error"):

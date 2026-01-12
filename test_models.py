@@ -2,7 +2,7 @@ import google.generativeai as genai
 import warnings
 warnings.filterwarnings('ignore', category=FutureWarning)
 
-genai.configure(api_key="AIzaSyBCCS2a4LNyytLBFdIj7SJdrmJuUFokYWs")
+genai.configure(api_key="AIzaSyDgUym-gsw9AxjIc3VevpIZhWKjoMYmIp0")
 
 print("Available Models:")
 print("=" * 50)

@@ -1,0 +1,1 @@
+We're building an AI-powered recipe recommendation app called "SmartChef". The app analyzes photos of ingredients users have at home and suggests personalized recipes. Users can filter by cuisine type and cooking time.

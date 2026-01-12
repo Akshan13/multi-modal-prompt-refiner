@@ -8,8 +8,8 @@ import google.generativeai as genai
 from refiner.template import RefinedPrompt
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyAItLuDIoVF5WOykJkjTbYJ81HK4O2jxgE")
-model = genai.GenerativeModel('models/gemini-2.5-flash')
+genai.configure(api_key="AIzaSyDgUym-gsw9AxjIc3VevpIZhWKjoMYmIp0")
+model = genai.GenerativeModel('models/gemini-2.0-flash-exp')
 
 
 def refine_with_llm(raw_text: str, max_retries: int = 3) -> RefinedPrompt:
@@ -81,7 +81,7 @@ Return ONLY valid JSON, no extra text or markdown.
             else:
                 raise ValueError(f"Failed to parse LLM response as JSON: {e}")
         
-        except Exception as e:  # ✅ Fixed - same level as try
+        except Exception as e: 
             if "429" in str(e) and attempt < max_retries - 1:
                 wait_time = 40
                 print(f"Rate limit hit. Waiting {wait_time}s... (Attempt {attempt + 1}/{max_retries})")

@@ -1,0 +1,43 @@
+{
+  "intent": "To develop an online learning platform offering professional certification courses in IT, finance, and healthcare, supporting a range of features for students and instructors.",
+  "functional_requirements": [
+    "Support video streaming",
+    "Support live webinars",
+    "Support quizzes",
+    "Support progress tracking",
+    "Content delivery through adaptive learning algorithms that adjust difficulty based on student performance",
+    "Integration with payment gateways (Stripe, PayPal) for course purchases",
+    "Certificate Generation",
+    "Discussion Forums",
+    "Instructor Dashboard",
+    "Analytics & Reporting",
+    "Multi-Language Support"
+  ],
+  "technical_constraints": [
+    "Handle 10,000 concurrent users",
+    "99.9% uptime SLA",
+    "Budget: $35,000",
+    "Timeline: 10 months",
+    "Team: 4 developers, 1 UI/UX designer",
+    "Frontend Technology Stack: React.js",
+    "Backend Technology Stack: Node.js + PostgreSQL",
+    "Video hosting Technology Stack: AWS S3 + CloudFront",
+    "Authentication Technology Stack: OAuth 2.0",
+    "Accessibility Compliance (WCAG 2.1)"
+  ],
+  "expected_deliverables": [
+    "Web platform",
+    "Admin dashboard",
+    "Mobile responsive design",
+    "API documentation",
+    "User training materials"
+  ],
+  "ambiguities": [
+    "Feasibility of completing all listed features, including adaptive learning and 10,000 concurrent users support, within the specified $35,000 budget and 10-month timeline with a team of 5.",
+    "Detailed definition of the adaptive learning algorithms and specific student performance metrics to be used.",
+    "Specific content creation, upload, and management workflows for courses and quizzes.",
+    "Detailed user roles and permissions beyond basic student and instructor roles (e.g., content moderator, super admin).",
+    "Specific security protocols beyond OAuth 2.0 (e.g., data encryption, compliance standards relevant to healthcare data).",
+    "Deployment environment for the main application beyond video hosting."
+  ]
+}
