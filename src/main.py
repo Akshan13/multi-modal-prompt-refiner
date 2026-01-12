@@ -11,10 +11,12 @@ from processors.pdf_processor import extract_pdf_text
 from processors.docx_processor import extract_docx_text
 from processors.image_processor import extract_image_text
 
-#Refiner
+#Refiners
 from refiner.extractor import refine_text_to_prompt
 #LLM Refiner
 from refiner.llm_refiner import refine_with_llm
+#Multi-Modal Refiner
+from refiner.multi_model_refiner import refine_multimodal
 
 
 
@@ -140,3 +142,35 @@ from refiner.llm_refiner import refine_with_llm
 #         print(refined_image.model_dump_json(indent=2))
 #     else:
 #         print(f"Image OCR failed or no text found!")
+
+#Multi-Modal Refiner TESTING
+if __name__ == "__main__":
+    print("="*70)
+    print("MULTI-MODAL REFINEMENT TEST")
+    print("="*70)
+    
+    # Test 1: Single source (text only)
+    print("\nTEST 1: Text Only")
+    print("-"*70)
+    result1 = refine_multimodal(text_path="data/samples/text_samples.txt")
+    print(result1.model_dump_json(indent=2))
+    
+    # Test 2: PDF + Image combined
+    print("\n\nTEST 2: PDF + Image Combined")
+    print("-"*70)
+    result2 = refine_multimodal(
+        pdf_path="data/samples/sample.pdf",
+        image_path="data/samples/sample.jpeg"
+    )
+    print(result2.model_dump_json(indent=2))
+    
+    # Test 3: ALL formats combined
+    print("\n\nTEST 3: ALL Formats Combined")
+    print("-"*70)
+    result3 = refine_multimodal(
+        text_path="data/samples/text_samples.txt",
+        pdf_path="data/samples/sample.pdf",
+        docx_path="data/samples/sample.docx",
+        image_path="data/samples/sample.jpeg"
+    )
+    print(result3.model_dump_json(indent=2))

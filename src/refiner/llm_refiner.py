@@ -8,7 +8,7 @@ import google.generativeai as genai
 from refiner.template import RefinedPrompt
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyBCCS2a4LNyytLBFdIj7SJdrmJuUFokYWs")
+genai.configure(api_key="AIzaSyAItLuDIoVF5WOykJkjTbYJ81HK4O2jxgE")
 model = genai.GenerativeModel('models/gemini-2.5-flash')
 
 
@@ -73,7 +73,7 @@ Return ONLY valid JSON, no extra text or markdown.
                 ambiguities=data.get("ambiguities", [])
             )
         
-        except json.JSONDecodeError as e:  # ✅ Fixed indentation - same level as try
+        except json.JSONDecodeError as e:  
             print(f"LLM returned invalid JSON: {result_text}")
             if attempt < max_retries - 1:
                 print(f"Retrying... (Attempt {attempt + 2}/{max_retries})")
@@ -84,7 +84,7 @@ Return ONLY valid JSON, no extra text or markdown.
         except Exception as e:  # ✅ Fixed - same level as try
             if "429" in str(e) and attempt < max_retries - 1:
                 wait_time = 40
-                print(f"⚠️ Rate limit hit. Waiting {wait_time}s... (Attempt {attempt + 1}/{max_retries})")
+                print(f"Rate limit hit. Waiting {wait_time}s... (Attempt {attempt + 1}/{max_retries})")
                 time.sleep(wait_time)
             elif attempt == max_retries - 1:
                 print(f"LLM Error after {max_retries} attempts: {e}")
