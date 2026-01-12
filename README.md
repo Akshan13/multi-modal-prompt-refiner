@@ -308,13 +308,5 @@ Submission Date: January 12, 2026
 
 ***
 
-## NOW DO THIS:
-
-1. **Copy everything above**
-2. **Open file:**
-```powershell
-cd D:\Projects\multi-modal-prompt-refiner
-notepad README.md
-
  This project was created exclusively for evaluation purposes and should not be deployed
 or commercialized without the author’s consent.
