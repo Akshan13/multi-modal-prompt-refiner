@@ -94,7 +94,7 @@ multi-modal-prompt-refiner/
 ### Installation
 
 1. **Clone the repository**
-git clone https://github.com/YOUR_USERNAME/multi-modal-prompt-refiner.git
+git clone https://github.com/Akshan13/multi-modal-prompt-refiner.git
 cd multi-modal-prompt-refiner
 Install dependencies
 
